@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>DWR - Test Home</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type='text/javascript' src='dwr/interface/JDate.js'></script>
+    <script type='text/javascript' src='dwr/engine.js'></script>
+    <script>
+        function init() {
+            JDate.getYear(load);
+        }
+        function load(data) {
+            alert(data + 1900 + '年')
+        }
+    </script>
+</head>
+<body>
+<button onclick="init()">show date</button>
+</body>
+</html> 

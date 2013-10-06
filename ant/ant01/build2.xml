@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<property name="build.dir" value="build">
+	</property>
+	<!-- 使用属性定义路径的时候，一定要使用locaiton而不要使用value -->
+	<property name="build.classes" location="${build.dir}/classes">
+	</property>
+	<property name="build.src" location="${build.dir}/src">
+	</property>
+	<property name="build.lib.dir" location="${build.dir}/dist">
+	</property>
+	<property name="execute.class" value="com.hhgz.ant.HelloWorld">
+	</property>
+	<property name="jar.name" value="Hello.jar">
+	</property>
+	<property name="build.jar" location="${build.lib.dir}/${jar.name}">
+	</property>
+	
+	<target name="testZip">
+		<zip destfile="${build.lib.dir}" basedir="C:/Users/JimQiao/Desktop/JSFLoginDemo"></zip>
+	</target>
+
+	<target name="test">
+		<echo>${build.classes}</echo>
+	</target>
+
+	<fileset id="src.path" dir="src">
+		<include name="**/*.java" />
+	</fileset>
+
+	<target name="clear">
+		<delete dir="build" />
+	</target>
+
+	<target name="init">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.src}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.lib.dir}" />
+	</target>
+
+	<target name="copySrc" depends="init">
+		<copy todir="${build.src}">
+			<fileset refid="src.path">
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="${build.classes}">
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="${build.jar}" basedir="${build.classes}">
+			<manifest>
+				<attribute name="Main-Class" value="${execute.class}" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="execute" depends="jar,copySrc">
+		<echo>基于类路径的classname来完成执行</echo>
+		<java classname="${execute.class}" classpath="${build.classes}">
+			<arg value="张三" />
+			<arg value="李四" />
+		</java>
+
+		<echo>基于jar执行</echo>
+		<java jar="${build.jar}" fork="true">
+			<arg value="张三" />
+			<arg value="李四" />
+		</java>
+	</target>
+</project>

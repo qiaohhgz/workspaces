@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                            http://www.springframework.org/schema/aop 
+                            http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+                            http://www.springframework.org/schema/tx 
+                            http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+                            http://www.directwebremoting.org/schema/spring-dwr 
+                            http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd">
+
+	<bean id="accountManager" class="com.server.AccountManager" scope="prototype">
+		<dwr:remote javascript="JAccount" />
+	</bean>
+
+	<dwr:configuration>
+		<dwr:convert class="java.lang.Exception" type="exception"></dwr:convert>
+		<dwr:convert class="java.util.*" type="bean"></dwr:convert>
+		<dwr:convert class="java.io.*" type="bean"></dwr:convert>
+		
+		<dwr:convert class="com.bean.Account" type="bean"></dwr:convert>
+		<dwr:convert class="com.bean.AccountTabBean" type="bean"></dwr:convert>
+		<dwr:convert class="com.bean.Grouping" type="bean"></dwr:convert>
+		<dwr:convert class="com.bean.Page" type="bean"></dwr:convert>
+		<dwr:convert class="com.bean.Sort" type="bean"></dwr:convert>
+		<dwr:convert class="com.bean.State" type="bean"></dwr:convert>
+		
+		<dwr:convert class="com.server.AccountManager" type="bean"></dwr:convert>
+	</dwr:configuration>
+</beans>

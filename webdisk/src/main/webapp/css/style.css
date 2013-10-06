@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+.divInput {
+	border: solid 1px black;
+	min-height: 20px;
+	width: 150px;
+	overflow: hidden;
+	display: inline-block;
+	padding: 2px 0px 2px 2px;
+}
+
+.divBtn {
+	border: solid 1px gray;
+	margin-right: 1px;
+	padding: 1px 2px 0px 0px;
+	background-color: green;
+}

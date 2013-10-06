@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.entity">
+	<class name="Student" table="student">
+		<id name="id" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="name" />
+		<set name="teachers" table="S_T" inverse="true" lazy="true">
+			<key column="sid" />
+			<many-to-many class="Teacher" column="tid" />
+		</set>
+	</class>
+
+	<class name="Teacher" table="teacher">
+		<id name="id" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="name" />
+		<set name="stus" table="S_T" cascade="all" lazy="true">
+			<key column="tid" />
+			<many-to-many class="Student" column="sid" />
+		</set>
+	</class>
+</hibernate-mapping>

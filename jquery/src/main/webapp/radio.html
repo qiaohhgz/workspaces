@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>radio</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type="text/javascript">
+        function check(value) {
+            document.getElementById("answer").value = value;
+        }
+    </script>
+</head>
+<body>
+<p>您喜欢哪款浏览器？</p>
+
+<form action="" id="myForm" name="myForm">
+    <p>
+        <input id="IE" type="radio" name="browser" onclick="check(this.value)" value="Internet Explorer"/>
+        <label for="IE">Internet Explorer</label>
+    </p>
+
+    <p>
+        <input id="FF" type="radio" name="browser" onclick="check(this.value)" value="Firefox"/>
+        <label for="FF">Firefox</label>
+    </p>
+
+    <p>
+        <input id="NS" type="radio" name="browser" onclick="check(this.value)" value="Netscape"/>
+        <label for="NS">Netscape</label>
+    </p>
+
+    <p>
+        <input id="OP" type="radio" name="browser" onclick="check(this.value)" value="Opera"/>
+        <label for="OP">Opera</label>
+    </p>
+
+    <p>
+        您喜欢的浏览器是：<input type="text" id="answer" size="20">
+    </p>
+</form>
+</body>
+</html>

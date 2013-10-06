@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>模板</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type="text/javascript" src="jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        function fileUpload(el) {
+
+        }
+        function fileDownload() {
+            $.get("bookReport.do", function (data) {
+                alert("Data Loaded: " + data);
+                $.get("excelReport.do", function (data) {
+                    alert("Data Loaded: " + data);
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+<form id="uploadFrom" action="#" method="post" enctype="multipart/form-data" target="hiddenFrame1">
+    <p><input type="text" id="userName" name="userName" value=""></p>
+
+    <p><input type="file" id="pic" name="pic" value=""></p>
+
+    <p><input type="button" value="File Uploader" onclick="fileUpload('uploadFrom')"></p>
+</form>
+<p>
+    <button onclick="fileDownload()">File download</button>
+</p>
+<iframe id="hiddenFrame1" style="display: none;" width="0" height="0" src="blank.html"></iframe>
+<iframe id="hiddenFrame2" style="display: none;" width="0" height="0" src="blank.html"></iframe>
+</body>
+</html>

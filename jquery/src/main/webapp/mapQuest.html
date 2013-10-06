@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>map</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type="text/javascript" src="jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        function getMap() {
+            var url = "map";
+            var data = "l=";
+            data += $('#l').val();
+            console.info("params = " + data);
+            $.getJSON(url, data, callback);
+        }
+        function callback(data) {
+            console.info(data.mapUrl);
+            $('#map').attr({src:data.mapUrl});
+
+        }
+    </script>
+</head>
+<body>
+<button onclick="getMap()">Show</button>
+<input type="text" id="l">
+<img id="map" alt="" src=""/>
+</body>
+</html>

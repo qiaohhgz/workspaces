@@ -1,0 +1,32 @@
+<html>
+ <head>
+  <title>javascript object</title>
+ </head>
+<script type="text/javascript">
+<!--
+	
+function User() {
+	this.name = 'name';
+	this.age = 20;
+	this.getName = function() {
+		return this.name;
+	}
+	this.getAge = function() {
+		return this.age;
+	}
+	this.setName = function(name) {
+		this.name = name;
+	}
+	this.setAge = function(age) {
+		this.age = age;
+	}
+}
+var u = new User();
+u.setName('abg');
+alert(u.getName());
+//-->
+</script>
+ <body>
+  
+ </body>
+</html>

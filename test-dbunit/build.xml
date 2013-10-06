@@ -1,0 +1,11 @@
+<target name="create-db-schema">
+    <property file="hibernate.properties"/>
+    <taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask"
+             classpathref="runtime.classpath"/>
+    <dbunit driver="${hibernate.connection.driver}"
+            url="${hibernate. connection.url}"
+            userid="${hibernate. connection.username}"
+            password="${hibernate. connection.password}">
+        <export dest="database-schema.dtd" format="dtd"/>
+    </dbunit>
+</target>

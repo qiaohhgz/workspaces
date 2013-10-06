@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>让指定元素左右移动</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <script type="text/javascript" src="jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        app = {
+            image:{
+                init:function () {
+                    for (var i = 0; i < 7; i++) {
+                        this.urls[i] = 'images/dd_scroll_' + (i + 1) + '.jpg';
+                    }
+                },
+                srcUrl:"",
+                urls:[]
+            },
+            beans:{
+                url:null,
+                width:null,
+                height:null
+            },
+            getImages:function () {
+
+            }
+        }
+        $(document).ready(function () {
+            app.image.init();
+            var width = 500;
+            var height = 180;
+            var url = app.image.urls[0];
+            $("#go").click(function () {
+                console.log("width = " + width);
+                $("#block").attr({src:url, alt:function () {
+                    return this.src;
+                }});
+                $("#block").left("100px");
+//                $("#block").animate({
+//                    left:width
+//                }, "slow");
+            });
+
+        });
+    </script>
+    <style type="text/css">
+        #block {
+            position: absolute;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<button id="go">Go</button>
+<img id="block" src="" alt=""/>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>点击按钮后div元素的几个不同属性一同变化</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <script type="text/javascript" src="jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        // 在一个动画中同时应用三种类型的效果
+        $(document).ready(function () {
+            $("#go").click(function () {
+                $("#block").animate({
+                    width:"90%",
+                    height:"100%",
+                    fontSize:"10em",
+                    borderWidth:10
+                }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="go"> Run</button>
+<div id="block">Hello!</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core">
+<head>
+
+</head>
+<body>
+	<ui:composition template="layout.html">
+		<ui:define name="pageTitle">Disk</ui:define>
+		<ui:define name="customStyle"></ui:define>
+		<ui:define name="customScript">
+			<script src="js/mainLogic.js" type="text/javascript"></script>
+		</ui:define>
+
+		<ui:define name="content">
+			<button>test</button>
+			<div id="dirList"></div>
+			<input type="button" id="btn1" value="btn1" />
+			<div id="input1" contentEditable="true" class="divInput">
+				<span class="divBtn">afdasf</span> <span class="divBtn">afdasf</span>
+			</div>
+			<input type="button" id="btn2" value="btn2" />
+			<input type="text" value="btn2" />
+			<div id="input2" contentEditable="true" class="divInput"></div>
+		</ui:define>
+	</ui:composition>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>结果</title>
+<meta http-equiv="keywords" content="enter,your,keywords,here" />
+<meta http-equiv="description"
+	content="A short description of this page." />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+<body bgcolor="#ffffff">
+	<f:view>
+		<h:form id="responseForm">
+			<h2>
+				<h:outputText id="result" value="#{userNumberBean.responseStr}" />
+			</h2>
+			<h:commandButton id="back" value="返回" action="success" />
+		</h:form>
+	</f:view>
+</body>
+</html>

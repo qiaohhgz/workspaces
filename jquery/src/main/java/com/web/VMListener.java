@@ -1,0 +1,84 @@
+package com.web; /**
+ * Created with IntelliJ IDEA.
+ * User: Jim_qiao
+ * Date: 7/4/13
+ * Time: 5:14 PM
+ * To change this template use File | Settings | File Templates.
+ */
+
+import org.apache.log4j.Logger;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.http.HttpSessionAttributeListener;
+import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+import java.util.Map;
+
+public class VMListener implements ServletContextListener,
+        HttpSessionListener, HttpSessionAttributeListener {
+    public static final Logger log = Logger.getLogger(VMListener.class);
+    // Public constructor is required by servlet spec
+    public VMListener() {
+        log.info("constructor");
+        Map<String,String> getenv = System.getenv();
+
+        for (String key : getenv.keySet()) {
+            log.info(key + "\t" + getenv.get(key));
+        }
+        System.out.println(getenv.get("build.env"));
+    }
+
+    // -------------------------------------------------------
+    // ServletContextListener implementation
+    // -------------------------------------------------------
+    public void contextInitialized(ServletContextEvent sce) {
+        /* This method is called when the servlet context is
+           initialized(when the Web application is deployed). 
+           You can initialize servlet context related data here.
+        */
+        log.info("contextInitialized");
+    }
+
+    public void contextDestroyed(ServletContextEvent sce) {
+        /* This method is invoked when the Servlet Context 
+           (the Web application) is undeployed or 
+           Application Server shuts down.
+        */
+        log.info("contextDestroyed");
+    }
+
+    // -------------------------------------------------------
+    // HttpSessionListener implementation
+    // -------------------------------------------------------
+    public void sessionCreated(HttpSessionEvent se) {
+        /* Session is created. */
+    }
+
+    public void sessionDestroyed(HttpSessionEvent se) {
+        /* Session is destroyed. */
+    }
+
+    // -------------------------------------------------------
+    // HttpSessionAttributeListener implementation
+    // -------------------------------------------------------
+
+    public void attributeAdded(HttpSessionBindingEvent sbe) {
+        /* This method is called when an attribute 
+           is added to a session.
+        */
+    }
+
+    public void attributeRemoved(HttpSessionBindingEvent sbe) {
+        /* This method is called when an attribute
+           is removed from a session.
+        */
+    }
+
+    public void attributeReplaced(HttpSessionBindingEvent sbe) {
+        /* This method is invoked when an attibute
+           is replaced in a session.
+        */
+    }
+}

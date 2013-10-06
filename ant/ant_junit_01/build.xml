@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<property name="src.dir" location="src" />
+	<property name="test.src.dir" location="test" />
+	<property name="lib.dir" location="lib" />
+	<property name="build.dir" location="build" />
+	<property name="build.classes" location="${build.dir}/classes" />
+	<property name="build.test.dir" location="${build.dir}/test" />
+	<property name="build.test.classes" location="${build.test.dir}/classes" />
+	<property name="build.test.report" location="${build.test.dir}/report" />
+	<property name="build.test.report.html" location="${build.test.report}/html" />
+	<property name="run.test.class" value="**/Test*.class" />
+
+
+	<path id="compile-path">
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
+	</path>
+
+	<path id="compile-test-path">
+		<path refid="compile-path" />
+		<pathelement location="${build.classes}" />
+	</path>
+
+	<path id="run-test-path">
+		<path refid="compile-test-path" />
+		<pathelement location="${build.test.classes}" />
+	</path>
+
+	<target name="clean" description="delete">
+		<echo>清理目录</echo>
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="init" description="mkdir" depends="clean">
+		<echo>创建目录</echo>
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.test.dir}" />
+		<mkdir dir="${build.test.classes}" />
+		<mkdir dir="${build.test.report}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<echo>编译源文件</echo>
+		<javac srcdir="${src.dir}" destdir="${build.classes}" classpathref="compile-path" includeantruntime="true">
+		</javac>
+	</target>
+
+	<target name="compile-test" depends="compile">
+		<echo>编译测试文件</echo>
+		<javac srcdir="${test.src.dir}" destdir="${build.test.classes}" classpathref="compile-test-path" includeantruntime="true">
+		</javac>
+	</target>
+
+	<target name="run-test" depends="compile-test">
+		<echo>运行测试</echo>
+		<junit printsummary="true" haltonfailure="true">
+			<classpath refid="run-test-path" />
+			<formatter type="brief" usefile="false" />
+			<formatter type="xml" />
+			<batchtest todir="${build.test.report}">
+				<fileset dir="${build.test.classes}" includes="${run.test.class}" />
+			</batchtest>
+		</junit>
+		<echo>导出报告</echo>
+		<junitreport todir="${build.test.report}">
+			<fileset dir="${build.test.report}" includes="TEST-*.xml" />
+			<report format="frames" todir="${build.test.report.html}" />
+		</junitreport>
+	</target>
+
+
+
+
+
+
+
+</project>
+
+
+
+
+
+
+
+

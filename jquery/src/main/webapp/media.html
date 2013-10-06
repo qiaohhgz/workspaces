@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+<script type="text/javascript">
+    function _play() {
+        var vi = document.getElementById("v");
+        if (vi.play) {
+            console.info("true");
+            vi.play();
+        }
+    }
+    function _pause() {
+        var vi = document.getElementById("v");
+        if (vi.play) {
+            console.info("true");
+            vi.pause();
+        }
+    }
+    function _setSrc(o, p) {
+        o = document.getElementById(o);
+        p = document.getElementById(p);
+        var src = "source?type=media&r=" + Math.random();
+        console.info(src);
+        o.src = src;
+        p.load();
+        p.play();
+    }
+</script>
+<audio id="p1" controls="controls" preload="none">
+    <source id="m1" src="source?type=media&r=2" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+<button onclick="_setSrc('m1','p1')">play</button>
+<hr/>
+<audio preload="none" id="p2">
+    <source src="" id="m2" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+<button onclick="_setSrc('m2','p2')">play</button>
+<hr/>
+<video src="source?type=video&r=3" id="v" preload="none">
+</video>
+<button onclick="_play()">play</button>
+<button onclick="_pause()">pause</button>
+</body>
+</html>

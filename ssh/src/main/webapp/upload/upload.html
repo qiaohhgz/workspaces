@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>upload file</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type='text/javascript' src='../dwr/engine.js'></script>
+    <script type='text/javascript' src='../dwr/util.js'></script>
+    <script type='text/javascript' src='../dwr/interface/jFileUpload.js'></script>
+    <script type="text/javascript" src="../scripts/common.js"></script>
+    <script type="text/javascript" src="upload.js"></script>
+</head>
+<body>
+<p id="uploadResult"></p>
+<form id="uploadFrom" action="../fileUpload" method="post" enctype="multipart/form-data" target="hiddenFrame1">
+    <p><input type="text" id="userName" name="userName" value=""></p>
+
+    <p><input type="file" id="pic" name="pic" value=""></p>
+
+    <p><input type="button" value="submit" onclick="uploadFile('uploadFrom')"></p>
+</form>
+<iframe id="hiddenFrame1" name="hiddenFrame1" src="blank.html"></iframe>
+</body>
+</html>

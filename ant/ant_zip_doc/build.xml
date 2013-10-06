@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<property name="src.dir" location="src" />
+	<property name="build.dir" location="build" />
+	<property name="build.classes" location="${build.dir}/classes" />
+	<property name="build.doc" location="${build.dir}/doc/api" />
+
+
+	<target name="clean" description="delete">
+		<echo>清理目录</echo>
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="init" description="mkdir" depends="clean">
+		<echo>创建目录</echo>
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.doc}" />
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: doc                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="doc">
+		<javadoc sourcepath="${src.dir}" private="true" windowtitle="MyJavaDoc" use="true" packagenames="com.jim.vo" destdir="${build.doc}" charset="UTF-8" docencoding="UTF-8" encoding="UTF-8">
+			<classpath>
+				<path location="${build.classes}"></path>
+			</classpath>
+		</javadoc>
+	</target>
+
+</project>
+

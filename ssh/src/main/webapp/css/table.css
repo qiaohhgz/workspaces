@@ -1,0 +1,34 @@
+/* border="0" cellpadding="0" cellspacing="0" class="apex_ir_html_export" */
+table.apex_ir_html_export {
+    background-color: #F2F2F5;
+    border-width: 1px 1px 0px 1px;
+    border-color: #C9CBD3;
+    border-style: solid;
+}
+
+table.apex_ir_html_export td {
+    color: #000000;
+    font-family: Tahoma, Arial, Helvetica, Geneva, sans-serif;
+    font-size: 9pt;
+    background-color: #EAEFF5;
+    padding: 8px;
+    background-color: #F2F2F5;
+    border-color: #ffffff #ffffff #cccccc #ffffff;
+    border-style: solid solid solid solid;
+    border-width: 1px 0px 1px 0px;
+}
+
+table.apex_ir_html_export th {
+    font-family: Tahoma, Arial, Helvetica, Geneva, sans-serif;
+    font-size: 9pt;
+    padding: 8px;
+    background-color: #CFE0F1;
+    border-color: #ffffff #ffffff #cccccc #ffffff;
+    border-style: solid solid solid none;
+    border-width: 1px 0px 1px 0px;
+    white-space: nowrap;
+}
+
+table.apex_ir_html_export tr.selected{
+    background-color: #AFA0A1;
+}

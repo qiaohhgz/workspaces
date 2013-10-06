@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>guess</title>
+<meta http-equiv="keywords" content="enter,your,keywords,here" />
+<meta http-equiv="description"
+	content="A short description of this page." />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+<body bgcolor="#ffffff">
+	<f:view>
+		<h:form id="helloForm">
+			<h2>
+				请猜一个
+				<h:outputLabel value="#{userNumberBean.minNum}" />
+				至
+				<h:outputLabel value="#{userNumberBean.maxNum}" />
+				的数字
+			</h2>
+			<h:outputLabel value="#{userNumberBean.keyNumber}" />
+			<h:inputText id="userNo" value="#{userNumberBean.userNumber}" />
+			<h:commandButton id="submit" action="success" value="提交" />
+			<br />
+			<h:message style="color:red;" id="errors1" for="userNo" />
+		</h:form>
+	</f:view>
+</body>
+
+</html>

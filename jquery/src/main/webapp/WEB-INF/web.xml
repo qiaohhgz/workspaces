@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <display-name>Archetype Created Web Application</display-name>
+    <listener>
+        <listener-class>com.web.VMListener</listener-class>
+    </listener>
+    <welcome-file-list>
+        <welcome-file>nav.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>SourceServlet</servlet-name>
+        <servlet-class>com.web.SourceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mapQuestServlet</servlet-name>
+        <servlet-class>com.web.MapQuestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SourceServlet</servlet-name>
+        <url-pattern>/source</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mapQuestServlet</servlet-name>
+        <url-pattern>/map</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DemoBookReportServlet</servlet-name>
+        <servlet-class>com.web.DemoBookReportServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DemoDisplayFileServlet</servlet-name>
+        <servlet-class>com.web.DemoDisplayExcelReport</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DemoBookReportServlet</servlet-name>
+        <url-pattern>/bookReport.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DemoDisplayFileServlet</servlet-name>
+        <url-pattern>/excelReport.do</url-pattern>
+    </servlet-mapping>
+</web-app>

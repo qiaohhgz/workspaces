@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="TestAnt" default="init">
+	<property name="mainDir" value="${basedir}/main"/>
+	<property name="srcDir" value="${mainDir}/src" />
+	<property name="buildDir" location="build" />
+	<property name="jarDir" location="lib" />
+	<property name="docDir" location="doc" />
+
+	<target name="init" description="初始化">
+		<mkdir dir="${mainDir}"/>
+		<mkdir dir="${buildDir}" />
+		<mkdir dir="${jarDir}" />
+		<mkdir dir="${docDir}" />
+	</target>
+
+	<target name="javac" depends="init" description="编译">
+		<javac srcdir="${mainDir}" destdir="${buildDir}" classpath="${srcDir}/*.java" debug="on" />
+	</target>
+
+	<target name="makeJar" depends="javac" description="export for jar">
+		<jar destfile="${jarDir}/src.jar" basedir="${buildDir}/src" />
+	</target>
+
+	<target name="javadoc" depends="javac" description="export for javadoc">
+		<javadoc sourcepath="${mainDir}" destdir="${docDir}" author="true" version="yes">
+		</javadoc>
+	</target>
+
+	<target name="main" depends="makeJar,javadoc" description="入口">
+	</target>
+</project>

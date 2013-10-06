@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JSFFlowViewLayout version="1.0">
+  <Drawing gridVisible="true" snapOn="true" />
+  <JSFFlowResource path="" location="2036,0" dimension="610,36" />
+  <JSFFlowResource path="/include/login.xhtml" location="0,966" dimension="153,36" />
+  <JSFFlowResource path="/campaign/firstlogin.xhtml" location="228,966" dimension="187,36" />
+  <JSFFlowResource path="/campaign/customerSelector.xhtml" location="490,966" dimension="232,36" />
+  <JSFFlowResource path="/campaign/categorySelector.xhtml" location="797,966" dimension="228,36" />
+  <JSFFlowResource path="/campaign/searchDashboard.xhtml" location="1100,966" dimension="231,36" />
+  <JSFFlowResource path="/campaign/listingDashboard.xhtml" location="1406,966" dimension="229,36" />
+  <JSFFlowResource path="/campaign/displayDashboard.xhtml" location="1710,966" dimension="234,36" />
+  <JSFFlowResource path="/campaign/dashboard.xhtml" location="2019,966" dimension="196,36" />
+  <JSFFlowResource path="/test/webvisibilityReport.xhtml" location="2290,966" dimension="206,36" />
+  <JSFFlowResource path="/campaign/dailyactivity.xhtml" location="2571,966" dimension="203,36" />
+  <JSFFlowResource path="/campaign/keywordclick.xhtml" location="2849,966" dimension="209,36" />
+  <JSFFlowResource path="/campaign/adText.xhtml" location="3133,966" dimension="175,36" />
+  <JSFFlowResource path="/campaign/socialDashboard.xhtml" location="3383,966" dimension="227,36" />
+  <JSFFlowResource path="/campaign/displayDailyActivity.xhtml" location="3685,966" dimension="243,36" />
+  <JSFFlowResource path="/campaign/displayAdText.xhtml" location="4003,966" dimension="214,36" />
+  <JSFFlowResource path="/campaign/listingDailyActivity.xhtml" location="4292,966" dimension="238,36" />
+  <JSFFlowResource path="/campaign/listingAdText.xhtml" location="4605,966" dimension="209,36" />
+  <JSFFlowResource path="/campaign/calltracking.xhtml" location="4889,966" dimension="201,36" />
+  <JSFFlowResource path="/campaign/emailtracking.xhtml" location="5165,966" dimension="212,36" />
+  <JSFFlowResource path="/campaign/conversions.xhtml" location="5452,966" dimension="203,36" />
+  <JSFFlowResource path="/campaign/helpCenter.xhtml" location="5730,966" dimension="198,36" />
+  <JSFFlowResource path="/campaign/googleReports.xhtml" location="6003,966" dimension="217,36" />
+  <JSFFlowResource path="/campaign/userInfo.xhtml" location="6295,966" dimension="183,36" />
+  <JSFFlowResource path="/campaign/listingHelpCenter.xhtml" location="6553,966" dimension="232,36" />
+  <JSFFlowResource path="/campaign/displayHelpCenter.xhtml" location="6860,966" dimension="237,36" />
+  <JSFFlowResource path="/campaign/SEODashboard.xhtml" location="7172,966" dimension="218,36" />
+  <JSFFlowResource path="/survey/thankYou.xhtml" location="7465,966" dimension="172,36" />
+  <JSFFlowNavigationCase id=",/include/login.xhtml,failure,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2041,36" />
+      <AbsolutePoint location="2041,66" />
+      <AbsolutePoint location="10,66" />
+      <AbsolutePoint location="10,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/include/login.xhtml,isSEOMB,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2051,36" />
+      <AbsolutePoint location="2051,96" />
+      <AbsolutePoint location="32,96" />
+      <AbsolutePoint location="32,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/include/login.xhtml,nomediabuy,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2061,36" />
+      <AbsolutePoint location="2061,126" />
+      <AbsolutePoint location="54,126" />
+      <AbsolutePoint location="54,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/include/login.xhtml,nouserpw,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2071,36" />
+      <AbsolutePoint location="2071,156" />
+      <AbsolutePoint location="76,156" />
+      <AbsolutePoint location="76,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/include/login.xhtml,errpwlen,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2081,36" />
+      <AbsolutePoint location="2081,186" />
+      <AbsolutePoint location="98,186" />
+      <AbsolutePoint location="98,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/firstlogin.xhtml,firstloggedin,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2111,36" />
+      <AbsolutePoint location="2111,276" />
+      <AbsolutePoint location="321,276" />
+      <AbsolutePoint location="321,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/customerSelector.xhtml,notcustomer,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2121,36" />
+      <AbsolutePoint location="2121,306" />
+      <AbsolutePoint location="606,306" />
+      <AbsolutePoint location="606,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/categorySelector.xhtml,demo,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2131,36" />
+      <AbsolutePoint location="2131,336" />
+      <AbsolutePoint location="911,336" />
+      <AbsolutePoint location="911,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/searchDashboard.xhtml,searchdashboard,#{authenticationManager.getDemoSelect}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2141,36" />
+      <AbsolutePoint location="2141,366" />
+      <AbsolutePoint location="1128,366" />
+      <AbsolutePoint location="1128,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/listingDashboard.xhtml,listingdashboard,#{authenticationManager.getDemoSelect}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2181,36" />
+      <AbsolutePoint location="2181,486" />
+      <AbsolutePoint location="1434,486" />
+      <AbsolutePoint location="1434,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/displayDashboard.xhtml,displaydashboard,#{authenticationManager.getDemoSelect}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2221,36" />
+      <AbsolutePoint location="2221,606" />
+      <AbsolutePoint location="1739,606" />
+      <AbsolutePoint location="1739,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dashboard.xhtml,success,#{authenticationManager.getWRBDemoSelect}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2261,36" />
+      <AbsolutePoint location="2261,726" />
+      <AbsolutePoint location="2031,726" />
+      <AbsolutePoint location="2031,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dashboard.xhtml,success,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2271,36" />
+      <AbsolutePoint location="2271,756" />
+      <AbsolutePoint location="2055,756" />
+      <AbsolutePoint location="2055,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/searchDashboard.xhtml,searchdashboard,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2151,36" />
+      <AbsolutePoint location="2151,396" />
+      <AbsolutePoint location="1186,396" />
+      <AbsolutePoint location="1186,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/listingDashboard.xhtml,listingdashboard,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2191,36" />
+      <AbsolutePoint location="2191,516" />
+      <AbsolutePoint location="1491,516" />
+      <AbsolutePoint location="1491,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/displayDashboard.xhtml,displaydashboard,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2231,36" />
+      <AbsolutePoint location="2231,636" />
+      <AbsolutePoint location="1797,636" />
+      <AbsolutePoint location="1797,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dashboard.xhtml,multidashboard,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2281,36" />
+      <AbsolutePoint location="2281,786" />
+      <AbsolutePoint location="2080,786" />
+      <AbsolutePoint location="2080,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dashboard.xhtml,singledashboard,#{authenticationManager.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2291,36" />
+      <AbsolutePoint location="2291,816" />
+      <AbsolutePoint location="2104,816" />
+      <AbsolutePoint location="2104,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/include/login.xhtml,loggedout,#{authenticationManager.logout}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2091,36" />
+      <AbsolutePoint location="2091,216" />
+      <AbsolutePoint location="120,216" />
+      <AbsolutePoint location="120,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/include/login.xhtml,loggedout,#{testLogin.logout}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2101,36" />
+      <AbsolutePoint location="2101,246" />
+      <AbsolutePoint location="142,246" />
+      <AbsolutePoint location="142,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/test/webvisibilityReport.xhtml,notcustomer,#{testLogin.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2341,36" />
+      <AbsolutePoint location="2341,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/test/webvisibilityReport.xhtml,notcustomer,#{userManagers.login}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2351,36" />
+      <AbsolutePoint location="2351,936" />
+      <AbsolutePoint location="2444,936" />
+      <AbsolutePoint location="2444,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dashboard.xhtml,multidashboard,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2301,36" />
+      <AbsolutePoint location="2301,846" />
+      <AbsolutePoint location="2129,846" />
+      <AbsolutePoint location="2129,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dashboard.xhtml,singledashboard,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2311,36" />
+      <AbsolutePoint location="2311,876" />
+      <AbsolutePoint location="2153,876" />
+      <AbsolutePoint location="2153,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/searchDashboard.xhtml,searchdashboard,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2161,36" />
+      <AbsolutePoint location="2161,426" />
+      <AbsolutePoint location="1244,426" />
+      <AbsolutePoint location="1244,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dailyactivity.xhtml,searchdailyactivity,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2361,36" />
+      <AbsolutePoint location="2361,906" />
+      <AbsolutePoint location="2621,906" />
+      <AbsolutePoint location="2621,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/keywordclick.xhtml,searchkeywordclick,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2381,36" />
+      <AbsolutePoint location="2381,846" />
+      <AbsolutePoint location="2901,846" />
+      <AbsolutePoint location="2901,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/adText.xhtml,searchadText,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2401,36" />
+      <AbsolutePoint location="2401,786" />
+      <AbsolutePoint location="3176,786" />
+      <AbsolutePoint location="3176,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/socialDashboard.xhtml,socialdashboard,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2421,36" />
+      <AbsolutePoint location="2421,726" />
+      <AbsolutePoint location="3496,726" />
+      <AbsolutePoint location="3496,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/displayDashboard.xhtml,displaydashboard,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2241,36" />
+      <AbsolutePoint location="2241,666" />
+      <AbsolutePoint location="1856,666" />
+      <AbsolutePoint location="1856,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/displayDailyActivity.xhtml,display_activecampain,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2431,36" />
+      <AbsolutePoint location="2431,696" />
+      <AbsolutePoint location="3745,696" />
+      <AbsolutePoint location="3745,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/displayAdText.xhtml,display_ads,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2451,36" />
+      <AbsolutePoint location="2451,636" />
+      <AbsolutePoint location="4056,636" />
+      <AbsolutePoint location="4056,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/listingDashboard.xhtml,listingdashboard,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2201,36" />
+      <AbsolutePoint location="2201,546" />
+      <AbsolutePoint location="1549,546" />
+      <AbsolutePoint location="1549,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/listingDailyActivity.xhtml,list_activecampain,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2471,36" />
+      <AbsolutePoint location="2471,576" />
+      <AbsolutePoint location="4351,576" />
+      <AbsolutePoint location="4351,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/listingAdText.xhtml,list_ads,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2491,36" />
+      <AbsolutePoint location="2491,516" />
+      <AbsolutePoint location="4657,516" />
+      <AbsolutePoint location="4657,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/calltracking.xhtml,calltracking,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2511,36" />
+      <AbsolutePoint location="2511,456" />
+      <AbsolutePoint location="4939,456" />
+      <AbsolutePoint location="4939,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/emailtracking.xhtml,emailtracking,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2531,36" />
+      <AbsolutePoint location="2531,396" />
+      <AbsolutePoint location="5218,396" />
+      <AbsolutePoint location="5218,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/conversions.xhtml,conversions,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2551,36" />
+      <AbsolutePoint location="2551,336" />
+      <AbsolutePoint location="5502,336" />
+      <AbsolutePoint location="5502,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/helpCenter.xhtml,helpcenter,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2571,36" />
+      <AbsolutePoint location="2571,276" />
+      <AbsolutePoint location="5829,276" />
+      <AbsolutePoint location="5829,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/googleReports.xhtml,googlereports,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2581,36" />
+      <AbsolutePoint location="2581,246" />
+      <AbsolutePoint location="6111,246" />
+      <AbsolutePoint location="6111,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/userInfo.xhtml,userinfo,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2591,36" />
+      <AbsolutePoint location="2591,216" />
+      <AbsolutePoint location="6386,216" />
+      <AbsolutePoint location="6386,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/listingHelpCenter.xhtml,listinghelpcenter,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2601,36" />
+      <AbsolutePoint location="2601,186" />
+      <AbsolutePoint location="6669,186" />
+      <AbsolutePoint location="6669,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/displayHelpCenter.xhtml,displayhelpcenter,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2611,36" />
+      <AbsolutePoint location="2611,156" />
+      <AbsolutePoint location="6978,156" />
+      <AbsolutePoint location="6978,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/SEODashboard.xhtml,seomedia,#{presentationManagementBase.getNextPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2621,36" />
+      <AbsolutePoint location="2621,126" />
+      <AbsolutePoint location="7226,126" />
+      <AbsolutePoint location="7226,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dashboard.xhtml,multidashboard,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2321,36" />
+      <AbsolutePoint location="2321,906" />
+      <AbsolutePoint location="2178,906" />
+      <AbsolutePoint location="2178,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dashboard.xhtml,singledashboard,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2331,36" />
+      <AbsolutePoint location="2331,936" />
+      <AbsolutePoint location="2202,936" />
+      <AbsolutePoint location="2202,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/searchDashboard.xhtml,searchdashboard,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2171,36" />
+      <AbsolutePoint location="2171,456" />
+      <AbsolutePoint location="1302,456" />
+      <AbsolutePoint location="1302,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/dailyactivity.xhtml,searchdailyactivity,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2371,36" />
+      <AbsolutePoint location="2371,876" />
+      <AbsolutePoint location="2723,876" />
+      <AbsolutePoint location="2723,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/keywordclick.xhtml,searchkeywordclick,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2391,36" />
+      <AbsolutePoint location="2391,816" />
+      <AbsolutePoint location="3005,816" />
+      <AbsolutePoint location="3005,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/adText.xhtml,searchadText,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2411,36" />
+      <AbsolutePoint location="2411,756" />
+      <AbsolutePoint location="3264,756" />
+      <AbsolutePoint location="3264,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/displayDashboard.xhtml,displaydashboard,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2251,36" />
+      <AbsolutePoint location="2251,696" />
+      <AbsolutePoint location="1914,696" />
+      <AbsolutePoint location="1914,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/displayDailyActivity.xhtml,display_activecampain,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2441,36" />
+      <AbsolutePoint location="2441,666" />
+      <AbsolutePoint location="3867,666" />
+      <AbsolutePoint location="3867,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/displayAdText.xhtml,display_ads,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2461,36" />
+      <AbsolutePoint location="2461,606" />
+      <AbsolutePoint location="4163,606" />
+      <AbsolutePoint location="4163,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/listingDashboard.xhtml,listingdashboard,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2211,36" />
+      <AbsolutePoint location="2211,576" />
+      <AbsolutePoint location="1606,576" />
+      <AbsolutePoint location="1606,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/listingDailyActivity.xhtml,list_activecampain,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2481,36" />
+      <AbsolutePoint location="2481,546" />
+      <AbsolutePoint location="4470,546" />
+      <AbsolutePoint location="4470,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/listingAdText.xhtml,list_ads,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2501,36" />
+      <AbsolutePoint location="2501,486" />
+      <AbsolutePoint location="4761,486" />
+      <AbsolutePoint location="4761,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/calltracking.xhtml,calltracking,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2521,36" />
+      <AbsolutePoint location="2521,426" />
+      <AbsolutePoint location="5039,426" />
+      <AbsolutePoint location="5039,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/emailtracking.xhtml,emailtracking,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2541,36" />
+      <AbsolutePoint location="2541,366" />
+      <AbsolutePoint location="5324,366" />
+      <AbsolutePoint location="5324,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/conversions.xhtml,conversions,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2561,36" />
+      <AbsolutePoint location="2561,306" />
+      <AbsolutePoint location="5604,306" />
+      <AbsolutePoint location="5604,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/campaign/SEODashboard.xhtml,seomedia,#{presentationManagementBase.getBackPage}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2631,36" />
+      <AbsolutePoint location="2631,96" />
+      <AbsolutePoint location="7335,96" />
+      <AbsolutePoint location="7335,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/survey/thankYou.xhtml,&lt;empty&gt;,#{cancellationSurveyPresManager.submit}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2641,36" />
+      <AbsolutePoint location="2641,66" />
+      <AbsolutePoint location="7551,66" />
+      <AbsolutePoint location="7551,966" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+</JSFFlowViewLayout>
+

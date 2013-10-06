@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.html</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="http://yui.yahooapis.com/combo?3.5.1/build/cssreset/reset-min.css&amp;3.5.1/build/cssfonts/fonts-min.css&amp;3.5.1/build/cssbase/base-min.css">
+<link href="css/css.css" rel="stylesheet">
+<script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<script src="/1000/dwr/engine.js"></script>
+<script src="/1000/dwr/util.js"></script>
+<script src="/1000/dwr/interface/JAccount.js"></script>
+<script src="script/common.js"></script>
+<script src="script/formatDateUtil.js"></script>
+<script src="script/accountManager.js"></script>
+</head>
+<body class="yui3-skin-sam" >
+
+<div id="addAccountDialog">
+    <div class="yui3-widget-bd">
+        <form>
+            <fieldset>
+                <p>
+                    <input type="hidden" name="id" id="id" placeholder="">
+                </p>
+                <p>
+                    <label for="name">Name</label><br/>
+                    <input type="text" name="name" id="name" placeholder="">
+                </p>
+                <p>
+                    <label for="password">Password</label><br/>
+                    <input type="password" name="pwd" id="pwd" placeholder="">
+                </p>
+                <a id="btnAddAccount" class="yui3-button" href="javascript:addAccount()">Add Account</a>
+                <a id="btnUpdateAccount" class="yui3-button" href="javascript:updateAccount()">Update Account</a>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div id="nestedPanel"></div>
+	
+	<a id="display" class="yui3-button" href="javascript:displayAccounts()">Refresh</a>&nbsp;&nbsp;
+	<a id="addRow" class="yui3-button" href="javascript:openAddAccountDialog()">New Account</a>&nbsp;&nbsp;
+	<a id="" class="yui3-button" href="javascript:testThrwosException()">testThrwosException</a>&nbsp;&nbsp;
+	
+	<div class="yui3-skin-sam dt-example yui3-g">
+		<div class="yui3-u-1-3" id="tab"></div>
+	</div>
+	
+	<a href="javascript:selectAll(true)" class="yui3-button">Select All</a>&nbsp;&nbsp;
+	<a href="javascript:selectAll(false)" class="yui3-button">Clear All</a>&nbsp;&nbsp;
+	<a href="javascript:removeSelected()" class="yui3-button">Remove Selected</a>&nbsp;&nbsp;
+	<a href="javascript:addTestData()" class="yui3-button">Add Test Data</a>
+</body>
+</html>

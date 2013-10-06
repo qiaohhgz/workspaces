@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var id = 0;
+	if (typeof $ != 'function') {
+		$ = function(el) {
+			return document.getElementById(el);
+		}
+	}
+	if (typeof myProcess != 'function') {
+		myProcess = function(ele, percent) {
+			percent--;
+			$(ele).innerHTML = percent;
+			if (percent - 1 > 0) {
+				setTimeout("myProcess('" + ele + "'," + percent + ")", 1000);
+			}
+		}
+	}
+	if (typeof addDiv != 'function') {
+		addDiv = function() {
+			id++;
+			var newId = 't' + id;
+			document.body.innerHTML += "<span id='"+newId+"'></span>";
+			$(newId).onclick = function() {
+				myProcess(newId, 10);
+			}
+		}
+	}
+</script>
+<style type="text/css">
+span {
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	border: 1px solid green;
+	color: black;
+	margin: 5px;
+	text-align: center;
+	width: 50px;
+}
+</style>
+</head>
+<body>
+	<button onclick="addDiv()">add</button>
+</body>
+</html>

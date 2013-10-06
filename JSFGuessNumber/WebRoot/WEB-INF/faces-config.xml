@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+	<managed-bean>
+		<managed-bean-name>userNumberBean</managed-bean-name>
+		<managed-bean-class>com.bean.UserNumberBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>userNumber</property-name>
+			<property-class>int</property-class>
+			<value />
+		</managed-property>
+		<managed-property>
+			<property-name>keyNumber</property-name>
+			<property-class>int</property-class>
+			<value />
+		</managed-property>
+		<managed-property>
+			<property-name>maxNum</property-name>
+			<property-class>int</property-class>
+			<value>10</value>
+		</managed-property>
+		<managed-property>
+			<property-name>minNum</property-name>
+			<property-class>int</property-class>
+			<value>0</value>
+		</managed-property>
+		<managed-property>
+			<property-name>responseStr</property-name>
+			<property-class>java.lang.String</property-class>
+			<value />
+		</managed-property>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/guess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/response.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/response.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/guess.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	
+</faces-config>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+	">
+	<!-- <context:component-scan base-package="com.bdqn" /> -->
+
+	<!-- 加载Hibernate配置 -->
+	<bean name="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:sqlserver.xml</value>
+			<!-- 
+			<value>classpath:hibernate.cfg.xml</value>
+			 -->
+		</property>
+	</bean>
+
+	<!-- 配置事务 -->
+	<!-- 配置Hibernate的事务管理器 -->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- 定义事务通知，需要指定一个事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<!-- 对get、find、search、query开头的方法要求只读事务 设置为只读属性是为了提高效率，详细请查API -->
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="search*" read-only="true" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="do*" propagation="REQUIRED" />
+			<tx:method name="*" propagation="REQUIRED" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<!-- 定义这些方法应用这些规则 -->
+		<aop:pointcut id="serviceMethodPointcut" expression="execution(public * com.biz.*.*(..))" />
+		<!-- 将事务通知与应用规则的方法组合（织入） -->
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethodPointcut" />
+	</aop:config>
+
+	<!-- 配置DAO -->
+	<bean id="studentDao" class="com.db.dao.StudentDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 配置服务层 -->
+	<bean id="studentBiz" class="com.biz.StudentBiz" >
+		<property name="studentDao" ref="studentDao"></property>
+	</bean>
+
+	<!-- 控制层 (id为struts.xml中的class) 以下每个bean必须都要增加scope="prototype"属性 -->
+	<bean id="studentAction" class="com.action.StudentAction" >
+		<property name="studentBiz" ref="studentBiz"></property>
+	</bean>
+</beans>

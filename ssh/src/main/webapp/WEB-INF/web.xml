@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <!--
+         Spring 可以象下面所示例的一样使用ContextLoaderListener注册一个ApplicationContext
+     -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/classes/applicationContext.xml
+            /WEB-INF/classes/applicationContext-dwr.xml
+        </param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- DWR -->
+    <servlet>
+        <servlet-name>dwr-invoker</servlet-name>
+        <servlet-class>org.directwebremoting.spring.DwrSpringServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dwr-invoker</servlet-name>
+        <url-pattern>/dwr/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- struts2  -->
+    <!--<filter>-->
+        <!--<filter-name>struts</filter-name>-->
+        <!--<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>struts</filter-name>-->
+        <!--<url-pattern>*.do</url-pattern>-->
+    <!--</filter-mapping>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>struts</filter-name>-->
+        <!--<url-pattern>*.action</url-pattern>-->
+    <!--</filter-mapping>-->
+
+    <!-- Servlet -->
+    <servlet>
+        <servlet-name>fileUpload</servlet-name>
+        <servlet-class>com.web.UploadFileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DemoBookReportServlet</servlet-name>
+        <servlet-class>com.web.DemoBookReportServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DemoDisplayFileServlet</servlet-name>
+        <servlet-class>com.web.DemoDisplayExcelReport</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DemoBookReportServlet</servlet-name>
+        <url-pattern>/bookReport</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DemoDisplayFileServlet</servlet-name>
+        <url-pattern>/excelReport</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fileUpload</servlet-name>
+        <url-pattern>/fileUpload</url-pattern>
+    </servlet-mapping>
+</web-app>

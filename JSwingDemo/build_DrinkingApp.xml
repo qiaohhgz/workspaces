@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project name="FatJar DrinkingApp-1.1.jar (experimental)" default="main" basedir=".">
+    <!-- this file was created by Fat-Jar Eclipse Plug-in -->
+    <!-- the ANT-Export is in a very early stage, so this -->
+    <!-- is only experimental, ANT 1.6 or above is        -->
+    <!-- required, feedback is always welcome:            -->
+    <!--       http://sourceforge.net/projects/fjep       -->
+    <!-- uncomment the following lines if using ANT outside Eclipse -->
+    <!--
+        <property name="fjepPath" value="reference:file:dropins/features/net.sf.fjep.fatjar_0.0.31.jarfatjar.jar"/>
+        <taskdef name="fatjar.build" classname="net.sf.fjep.anttask.FJBuildTask" classpath="${fjepPath}"/>
+        <typedef name="fatjar.manifest" classname="net.sf.fjep.anttask.FJManifestType" classpath="${fjepPath}"/>
+        <typedef name="fatjar.exclude" classname="net.sf.fjep.anttask.FJExcludeType" classpath="${fjepPath}"/>
+        <typedef name="fatjar.jarsource" classname="net.sf.fjep.anttask.FJJarSourceType" classpath="${fjepPath}"/>
+        <typedef name="fatjar.filesource" classname="net.sf.fjep.anttask.FJFileSourceType" classpath="${fjepPath}"/>
+    -->
+    <!-- uncomment the above lines to use ANT outside of Eclipse -->
+    <target name="main">
+        <fatjar.build output="DrinkingApp-1.2.jar">
+            <fatjar.manifest mainclass="com.jim.drinking.app.DrinkingApp"/>
+            <fatjar.filesource path="F:\IDEMyEclipse10\Workspaces\JSwingDemo\bin" relpath="">
+                <fatjar.exclude relpath="com/demo/"/>
+                <fatjar.exclude relpath="com/frm/"/>
+                <fatjar.exclude relpath="com/main/"/>
+            </fatjar.filesource>
+            <fatjar.filesource path="F:\IDEMyEclipse10\Workspaces\JavaSE\bin" relpath="">
+                <fatjar.exclude relpath="com/jim/audio/"/>
+                <fatjar.exclude relpath="com/jim/demo/"/>
+                <fatjar.exclude relpath="com/jim/design/"/>
+                <fatjar.exclude relpath="com/jim/gif/"/>
+                <fatjar.exclude relpath="com/jim/j2w/"/>
+                <fatjar.exclude relpath="com/jim/mail/"/>
+                <fatjar.exclude relpath="com/jim/mylogger/"/>
+                <fatjar.exclude relpath="com/jim/net/"/>
+                <fatjar.exclude relpath="com/jim/regedit/"/>
+                <fatjar.exclude relpath="com/melloware/"/>
+                <fatjar.exclude relpath="classpath.xml"/>
+                <fatjar.exclude relpath="myAccessDB.mdb"/>
+                <fatjar.exclude relpath="MyHotKeyHelper-1.0.jar"/>
+                <fatjar.exclude relpath="myLogger.log"/>
+                <fatjar.exclude relpath="myWorkbookDB.xls"/>
+                <fatjar.exclude relpath="myWorkBookDB2.xls"/>
+                <fatjar.exclude relpath="test.xml"/>
+            </fatjar.filesource>
+            <fatjar.jarsource file="F:\IDEMyEclipse10\Workspaces\JSwingDemo\lib\swing-layout-1.0.3.jar" relpath=""/>
+            <fatjar.jarsource file="F:\IDEMyEclipse10\Workspaces\JSwingDemo\lib\AbsoluteLayout.jar" relpath=""/>
+            <fatjar.jarsource file="E:\MyEclipse\thirdparty\log4j\log4j-1.2.15.jar" relpath=""/>
+            <fatjar.jarsource file="E:\MyEclipse\thirdparty\hibernate\dom4j-1.6.1.jar" relpath=""/>
+        </fatjar.build>
+    </target>
+</project>

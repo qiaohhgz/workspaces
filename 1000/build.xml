@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build 1000 project" default="compile" basedir=".">
+    <property name="projname" value="1000"/>
+
+    <path id="classpath.lib">
+        <fileset dir="${thirdparty}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="compile" description="compile source code" depends="init">
+        <javac destdir="${web.classes.dir}"
+               source="1.6"
+               debug="true">
+            <classpath refid="classpath.lib"/>
+            <src path="${src.common}"/>
+            <src path="${src.local}"/>
+            <src path="${src.salesportal}"/>
+
+            <exclude name="com/yellowbook/dealfeed/**"/>
+            <exclude name="com/yellowbook/presentation/beanmanager/deal/**"/>
+            <exclude name="com/yellowbook/presentation/data/deal/**"/>
+            <exclude name="com/yellowbook/service/deal/**"/>
+        </javac>
+        <jar destfile="${build.classes}/${projname}.jar" basedir="${build.classes}" excludes="*.jar"/>
+    </target>
+
+    <target name="build.local" depends="compile" description="local build into web dir">
+        <copy todir="${web.lib.dir}">
+            <fileset dir="${thirdparty}">
+                <exclude name="icefaces*.jar"/>
+                <exclude name="just-ice-1.6.2.jar"/>
+            </fileset>
+        </copy>
+        <delete dir="${web.lib.dir}/tools"/>
+        <copy todir="${web.classes.dir}">
+            <fileset dir="${build.classes}"/>
+        </copy>
+    </target>
+</project>

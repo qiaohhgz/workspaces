@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<!-- 使用属性定义路径的时候，一定要使用locaiton而不要使用value -->
+	<property name="build.classes" location="${build.dir}/classes">
+	</property>
+	<property name="build.src" location="${build.dir}/src">
+	</property>
+	<property name="build.lib.dir" location="${build.dir}/dist">
+	</property>
+	<property name="build.jar" location="${build.lib.dir}/${jar.name}">
+	</property>
+	
+	<!-- 把环境变量中的参数导入到env这个变量中 -->
+	<property environment="env"></property>
+	
+	<!-- 如果属性太多，可以将属性放置到一个外部文件中定义，之后进行引用
+	特别注意：如果是路径不建议在外部文件中定义，以为此事就不会设置location的值 -->
+	<property file="build.properties"></property>
+	<target name="test">
+		<echo>${build.classes}</echo>
+		<echo>${ant.home}</echo>
+		<echo>${ant.version}</echo>
+		<echo>${env.Path}</echo>		
+		<echo>${env.JAVA_HOME}</echo>		
+	</target>
+
+	<fileset id="src.path" dir="src">
+		<include name="**/*.java" />
+	</fileset>
+
+	<target name="clear">
+		<delete dir="build" />
+	</target>
+
+	<target name="init">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.src}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.lib.dir}" />
+	</target>
+
+	<target name="copySrc" depends="init">
+		<copy todir="${build.src}">
+			<fileset refid="src.path">
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="${build.classes}">
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="${build.jar}" basedir="${build.classes}">
+			<manifest>
+				<attribute name="Main-Class" value="${execute.class}" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="execute" depends="jar,copySrc">
+		<echo>基于类路径的classname来完成执行</echo>
+		<java classname="${execute.class}" classpath="${build.classes}">
+			<arg value="张三" />
+			<arg value="李四" />
+		</java>
+
+		<echo>基于jar执行</echo>
+		<java jar="${build.jar}" fork="true">
+			<arg value="张三" />
+			<arg value="李四" />
+		</java>
+	</target>
+</project>

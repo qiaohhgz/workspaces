@@ -1,0 +1,43 @@
+<html>
+ <head>
+  <title> new document </title>
+ </head>
+
+ <body>
+  <script type="text/javascript">
+  <!--
+function ShowFolderInfo()
+{
+  var fso, fldr, s = "";
+  // 获得 FileSystemObject 的实例。
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  // 获得 Drive 对象。
+  fldr = fso.GetFile("e:\a.txt");
+  // 打印父文件夹名。
+  document.write("Parent folder name is: " + fldr + "<br>");
+  // 打印驱动器名字。
+  document.write("Contained on drive " + fldr.Name + "<br>");
+  // 打印根文件名。
+}
+function ShowFolderFileList(folderspec)
+{
+  var fso, f, f1, fc, s;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.GetFolder(folderspec);
+  fc = new Enumerator(f.files);
+  s = "";
+  for (; !fc.atEnd(); fc.moveNext())
+  {
+      s += fc.item();
+      s += "<br>";
+  }
+  alert(s);
+  return(s);
+}
+
+  //-->
+  </script>
+  <a href="javascript:ShowFolderInfo()">ShowFolderInfo</a>
+    <a href="javascript:ShowFolderFileList('E:\')">ShowFolderInfo</a>
+ </body>
+</html>

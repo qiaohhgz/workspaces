@@ -1,0 +1,411 @@
+@CHARSET "UTF-8";
+
+#headerimg {
+	position: relative
+}
+
+#header .rss {
+	background: url(pagebackground_exp.png) left -102px no-repeat;
+	padding-left: 24px;
+	padding-right: 8px
+}
+
+#header .usersys {
+	background: url(pagebackground_exp.png) left -126px no-repeat;
+	padding-left: 24px;
+	padding-right: 8px
+}
+
+.nomarginTop {
+	margin-top: 0
+}
+
+.softListColIcon {
+	width: 58px;
+	vertical-align: top;
+	text-align: center
+}
+
+a.backtop {
+	margin-left: 0 !important
+}
+
+.downloadContainer,.historyContainer,.appinfoContainer {
+	display: none;
+	text-indent: 0
+}
+
+.downloadContainer td {
+	padding: 10px
+}
+
+.historyEntry {
+	margin-bottom: 10px;
+	line-height: 25px;
+	border-left: 3px solid #ddd;
+	padding: 5px;
+	background-color: #fafaff
+}
+
+.historyEntry .title {
+	font-weight: bold;
+	border-bottom: 1px dotted #ccc;
+	color: #7d50b3
+}
+
+.historyEntry .title span {
+	padding-left: 20px;
+	font-weight: normal;
+	color: gray
+}
+
+.historyEntry .title .nb {
+	font-weight: bold;
+	font-style: italic;
+	padding: 0
+}
+
+.historyEntry span.feedbacklink {
+	margin-left: 15px;
+	font-style: italic;
+	color: gray
+}
+
+.historyEntry ul {
+	margin-left: 0;
+	list-style: none
+}
+
+.historyEntry li {
+	margin-left: 0;
+	line-height: 20px;
+	background-image: url(historyicon_exp.png);
+	background-repeat: no-repeat;
+	background-position: 0 -600px;
+	text-indent: 20px
+}
+
+.historyEntry li.add {
+	background-position: 0 0;
+	color: blue
+}
+
+.historyEntry li.remove {
+	background-position: 0 -100px;
+	color: gray
+}
+
+.historyEntry li.fix {
+	background-position: 0 -200px;
+	color: green
+}
+
+.historyEntry li.warn {
+	background-position: 0 -300px;
+	color: red
+}
+
+.historyEntry li.pre {
+	background-position: 0 -400px;
+	color: purple
+}
+
+.historyEntry li.rollback {
+	background-position: 0 -500px;
+	color: #854909
+}
+
+.historyEntry li.blank {
+	background-image: none
+}
+
+.downloadContainer table {
+	width: 100%;
+	padding: 10px
+}
+
+.downloadContainer td {
+	vertical-align: top
+}
+
+.downloadContainer .btn {
+	width: 215px
+}
+
+.downloadButton {
+	height: 51px;
+	width: 199px;
+	background: url(pagebackground_exp.png) no-repeat !important;
+	line-height: 25px;
+	text-align: center;
+	cursor: pointer;
+	display: block;
+	text-decoration: none;
+	color: #854909 !important
+}
+
+a.downloadButton:hover {
+	background-position: 0 -51px;
+	color: #935c14 !important;
+	text-decoration: none
+}
+
+a.downloadButton:visited {
+	color: #854909
+}
+
+.downloadButton p {
+	font-size: 12px;
+	margin: 0
+}
+
+.downloadButton h6 {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0
+}
+
+.downloadButton span {
+	font-weight: bold;
+	font-family: 'Comic Sans MS'
+}
+
+.lineinfo,.boxinfo {
+	line-height: 20px;
+	font-size: 12px;
+	text-indent: 20px;
+	background-repeat: no-repeat;
+	background-image: url(pagebackground_exp.png);
+	display: block;
+	clear: both
+}
+
+.boxinfo {
+	float: left;
+	clear: none !important;
+	width: 100px;
+	padding-right: 5px
+}
+
+.info {
+	background-position: -644px -20px
+}
+
+.time {
+	background-position: -644px -60px
+}
+
+.discuss {
+	background-position: -644px -40px
+}
+
+.stat {
+	background-position: -644px -100px
+}
+
+.softflag_1 {
+	background-position: -644px -120px;
+	color: red
+}
+
+.softflag_2 {
+	background-position: -644px 0;
+	color: #3f9e14
+}
+
+.softflag_4 {
+	background-position: -644px -140px;
+	color: red
+}
+
+table.threadlist {
+	
+}
+
+table.threadlist tr:hover {
+	background-color: #fff !important
+}
+
+table.threadlist th {
+	text-align: left;
+	padding-left: 20px
+}
+
+table.threadlist th span.tool {
+	font-weight: normal;
+	float: right;
+	line-height: 32px;
+	padding-right: 10px;
+	color: #000;
+	display: block
+}
+
+td .sub {
+	font-size: 10px !important;
+	font-style: normal
+}
+
+.threadTitle {
+	float: left
+}
+
+.threadContent {
+	overflow: auto;
+	max-height: 400px;
+	min-height: 100px
+}
+
+.threadStatus {
+	margin: 10px;
+	border: 1px dashed #ccc;
+	background-color: #f9f9f9;
+	padding: 7px;
+	border-radius: 5px;
+	color: #555
+}
+
+.navigation {
+	line-height: 26px;
+	overflow: hidden
+}
+
+.navigation a {
+	line-height: 26px !important
+}
+
+table.threadlist .tool a {
+	margin-left: 5px
+}
+
+.contentblock h5 .tool a {
+	margin-left: 10px
+}
+
+pre.codeBlock,div.codeBlock,ol.codeBlock {
+	border: 1px dotted #6c93ff;
+	line-height: 150%;
+	word-break: break-word;
+	font-family: Consolas, Verdana, '微软雅黑', 'Microsoft YaHei' !important;
+	border-radius: 5px
+}
+
+pre.codeBlock,div.codeBlock {
+	font-size: 12px !important;
+	padding: 5px;
+	background: #fff;
+	overflow: auto
+}
+
+pre.codeBlock font,div.codeBlock font,ol.codeBlock font {
+	font-size: 12px !important
+}
+
+ol.codeBlock {
+	background-color: #e3e3ff !important;
+	list-style-position: outside;
+	margin-left: 0
+}
+
+ol.codeBlock li {
+	background-color: #fff;
+	padding-left: 5px;
+	border-left: 1px solid #8a8aff;
+	margin-left: 50px
+}
+
+ol.codeBlock li:nth-child(even) {
+	background-color: #f5f5f5
+}
+
+#topicList td {
+	line-height: 22px
+}
+
+.topic_locked a,.topic_bug_reproducing a,.topic_bug_notreproduced a,.topic_bug_reproducted a,.topic_bug_resolving a,.topic_bug_resolved a,.topic_bug_published a,.topic_adv_published a,.topic_adv_developed a,.topic_adv_developing a,.topic_adv_accepted a,.topic_adv_notavaliable a,.topic_adv_notviewed a,.topic_adv_discussing a,.topic_bug_answered a
+	{
+	background-image: url(topiclist_exp.png);
+	background-repeat: no-repeat;
+	text-indent: 24px;
+	display: block
+}
+
+.topic_locked a,.topic_bug_notreproduced a,.topic_adv_notavaliable a {
+	font-style: italic;
+	background-position: 0 0;
+	color: gray
+}
+
+.topic_notreviewed,.topic_bug_notviewed,.topic_adv_notviewed {
+	font-weight: bold
+}
+
+.topic_bug_notviewed a,.topic_notreviewed a,.topic_adv_notviewed a {
+	color: red
+}
+
+.topic_bug_reproducing {
+	
+}
+
+.topic_bug_reproducing a {
+	background-position: 0 -440px;
+	color: blue
+}
+
+.topic_bug_reproducted {
+	
+}
+
+.topic_bug_reproducted a {
+	background-position: 0 -90px;
+	color: red
+}
+
+.topic_bug_resolving,.topic_adv_developing {
+	
+}
+
+.topic_bug_resolving a,.topic_adv_developing a {
+	background-position: 0 -176px;
+	color: green
+}
+
+.topic_bug_resolved,.topic_adv_developed {
+	
+}
+
+.topic_bug_resolved a,.topic_adv_developed a {
+	background-position: 0 -265px;
+	color: purple
+}
+
+.topic_bug_published,.topic_adv_published {
+	
+}
+
+.topic_bug_published a,.topic_adv_published a {
+	color: #ffa500;
+	background-position: 0 -528px
+}
+
+.topic_adv_accepted {
+	
+}
+
+.topic_adv_accepted a {
+	background-position: 0 -352px;
+	color: blue
+}
+
+.topic_adv_discussing a,.topic_bug_answered a {
+	color: #3253ad;
+	background-position: 0 -626px
+}
+
+.content_pic {
+	border: 7px solid rgba(255, 255, 255, .7);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 0 15px rgba(35, 35, 35, .7);
+	border-radius: 10px
+}

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Maven: selenium:selenium-java-driver:1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dependencyLocalLib/lib/selenium-java-client-driver.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

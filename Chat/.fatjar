@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Sun Sep 16 11:44:04 CST 2012
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=Client.jar
+manifest.mergeall=true
+manifest.mainclass=com.ui.chat.frame.ChatSettingFrame
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

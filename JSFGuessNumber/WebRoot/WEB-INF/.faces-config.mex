@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JSFFlowViewLayout version="1.0">
+  <Drawing gridVisible="true" snapOn="true" />
+  <JSFFlowResource path="/guess.xhtml" location="180,100" dimension="121,36" />
+  <JSFFlowResource path="/response.xhtml" location="160,280" dimension="129,36" />
+  <JSFFlowNavigationCase id="/guess.xhtml,/response.xhtml,success,&lt;empty&gt;" routingType="1">
+    <Bendpoints>
+      <Point location="200,200" />
+    </Bendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/response.xhtml,/guess.xhtml,success,&lt;empty&gt;" routingType="1">
+    <Bendpoints>
+      <Point location="280,220" />
+    </Bendpoints>
+  </JSFFlowNavigationCase>
+</JSFFlowViewLayout>
+
