@@ -1,15 +1,15 @@
 package com.jim.mvc.controller;
 
 import com.google.gson.Gson;
+import com.jim.mvc.constant.SessionKeys;
 import com.jim.mvc.model.VRegisterRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
@@ -22,7 +22,15 @@ public class HomeController {
             .getLogger(HomeController.class);
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Locale locale, Model model) {
+    public String index() {
+        return "redirect:home";
+    }
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String home(HttpServletRequest request, Locale locale, Model model) {
+        if (request.getSession().getAttribute(SessionKeys.SESSION_USER) == null) {
+            return "redirect:login";
+        }
         logger.info("Welcome home! The client locale is {}.", locale);
         Date date = new Date();
         DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
@@ -54,12 +62,49 @@ public class HomeController {
     @RequestMapping(value = "/reg", method = RequestMethod.POST)
     public
     @ResponseBody
-    String register(HttpServletRequest request, @RequestParam String json) {
-        Gson g = new Gson();
-        VRegisterRequest model = g.fromJson(json, VRegisterRequest.class);
-        logger.info("Welcome register!");
+    VRegisterRequest register(HttpServletRequest request, @RequestBody VRegisterRequest model) {
+        logger.info("Welcome register! name = {}", model.getName());
+        return model;
+    }
 
-//        String json = String.format("name:{0},hobby:{1}", model.getName(), model.getHobby().get(0).getName());
-        return "{msg:'test'}";
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginPage(HttpServletRequest request) {
+        return "login";
+    }
+
+    @RequestMapping(value = "/loginOne", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String loginOne(HttpServletRequest request, String username, String password) {
+        logger.info("login two username = {} password = {}", username, password);
+        if (null != username && null != password && username.length() > 0 && password.length() > 0) {
+            request.getSession().setAttribute(SessionKeys.SESSION_USER, username);
+            return "redirect:home";
+        } else {
+            return "redirect:login";
+        }
+
+    }
+
+    @RequestMapping(value = "/loginTwo", method = RequestMethod.POST)
+    public String loginTwo(Model model, String username, String password) {
+        logger.info("login two username = {} password = {}", username, password);
+        if (null != username && null != password) {
+            model.addAttribute(SessionKeys.SESSION_USER, username);
+            return "home";
+        }
+        return "login";
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest request) {
+        request.getSession().removeAttribute(SessionKeys.SESSION_USER);
+        if (request.getSession().getAttribute(SessionKeys.SESSION_USER) == null) {
+            logger.info("logout success");
+        } else {
+            logger.info("logout error");
+        }
+        new RedirectView();
+        return "redirect:login";
     }
 }

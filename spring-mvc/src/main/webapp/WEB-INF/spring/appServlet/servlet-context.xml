@@ -25,14 +25,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<context:component-scan base-package="com.jim.mvc.controller" />
-
+	<context:component-scan base-package="com.jim.mvc" />
+    <!--  -->
 	<beans:bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<beans:property name="basename" value="classpath:messages" />
 		<beans:property name="defaultEncoding" value="UTF-8" />
 	</beans:bean>
 
+    <!-- i18n -->
 	<beans:bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
 		<beans:property name="defaultLocale" value="en" />

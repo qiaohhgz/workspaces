@@ -1,13 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-	<title>Home</title>
+    <title>Home</title>
 </head>
 <body>
+
+
 <h1>
-	Hello world!  
+    Hello world!
+    <P> Hello ${sessionScope.sessionUser}. </P>
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P> The time on the server is ${serverTime}. </P>
+
 </body>
 </html>
