@@ -2,6 +2,8 @@ package com.jim.mvc.controller;
 
 import com.google.gson.Gson;
 import com.jim.mvc.constant.SessionKeys;
+import com.jim.mvc.exception.JsonException;
+import com.jim.mvc.exception.PageException;
 import com.jim.mvc.model.VRegisterRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -107,4 +109,15 @@ public class HomeController {
         new RedirectView();
         return "redirect:login";
     }
+
+    @RequestMapping(value = "/jsonEx", method = RequestMethod.GET)
+    public String testJsonException() throws Exception {
+        throw new JsonException("json exception.");
+    }
+
+    @RequestMapping(value = "/pageEx", method = RequestMethod.GET)
+    public String testPageException() throws Exception {
+        throw new PageException("page exception.");
+    }
+
 }

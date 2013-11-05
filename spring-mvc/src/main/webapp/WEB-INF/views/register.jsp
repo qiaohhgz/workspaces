@@ -21,6 +21,24 @@
     }
 </script>
 <script type="text/javascript">
+    $.extend($, {ajaxJson: function (options) {
+        var ops = {
+            type: "POST",
+            url: "",
+            timeout: 200000,
+            dataType: "json",
+            contentType: "application/json; charset=UTF-8",
+            cache: false,    //This will force requested pages not to be cached by the browser
+            processData: false //To avoid making query String instead of JSON
+        };
+        $.extend(ops, options);
+        if (typeof ops.data == "object") {
+            ops.data = JSON.stringify(ops.data);
+        }
+        $.ajax(ops);
+    }
+    });
+
     function getServerTime(btn) {
         $.ajax({
             type: "GET",
@@ -38,26 +56,31 @@
         $.ajax({
             type: "POST",
             url: getFullUrl("reg"),
-            traditional: true,
-            data: "json=" + JSON.stringify(req),
+            data: JSON.stringify(req),
+            timeout: 200000,
+            contentType: "application/json; charset=UTF-8",
+            cache: false,    //This will force requested pages not to be cached by the browser
+            processData: false, //To avoid making query String instead of JSON
             success: successCallBack,
             error: errorCallBack,
             complete: completeCallBack
         });
     }
 
-    function register2() {
-        var req = {name: "jim", hobby: [
-            {name: "yumaoqiu", type: "typeValue"}
-        ]};
+    function jsonExOne() {
         $.ajax({
-            type: "POST",
-            url: getFullUrl("reg2"),
-            data: JSON.stringify(req),
-            timeout: 200000,
-            contentType: "application/json; charset=UTF-8",
-            cache: false,    //This will force requested pages not to be cached by the browser
-            processData:false, //To avoid making query String instead of JSON
+            type: "GET",
+            url: getFullUrl("jsonEx"),
+            success: successCallBack,
+            error: errorCallBack,
+            complete: completeCallBack
+        });
+    }
+
+    function jsonEx(o) {
+        $.ajax({
+            type: "GET",
+            url: getFullUrl("exception/getPagesAsJson?type=" + o.dataset["type"]),
             success: successCallBack,
             error: errorCallBack,
             complete: completeCallBack
@@ -66,13 +89,12 @@
 
     function successCallBack(data, status) {
         alert(JSON.stringify(data));
-        console.log("success status = " + status);
     }
     function errorCallBack(event, status, ex) {
-        console.log("error status = " + status);
+        alert("error message = " + ex);
     }
     function completeCallBack(event, status) {
-        console.log("completed status = " + status);
+
     }
 </script>
 <body>
@@ -82,7 +104,11 @@
 
 <button onclick="getServerTime(this)">get server time</button>
 <button onclick="register()">register</button>
-<button onclick="register2()">register2</button>
+<button onclick="jsonExOne()">test json exception</button>
+<a href="${pageContext.request.contextPath}/pageEx">test page exception</a>
+<a href="${pageContext.request.contextPath}/exception/getPages?type=error">test custom exception</a>
+<a href="${pageContext.request.contextPath}/exception/getPages?type=io-error">test exception</a>
+<button onclick="jsonEx(this)" data-type="error">test json exception</button>
 
 </body>
 </html>
