@@ -1,12 +1,27 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>google trends</title>
-    <script type="text/javascript" src="http://www.google.com/trends/embed.js?hl=zh-CN&q=%E7%88%B8%E7%88%B8%E5%8E%BB%E5%93%AA,+%E9%9B%BE%E9%9C%BE,+security+cameras&date=today+1-m&cmpt=q&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=500&h=330"></script>
+    <script type="text/javascript" src="lib/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        var baseUrl = "http://www.google.com/trends/fetchComponent?hl=zh-CN&date=today+1-m&cmpt=q&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=500&h=330";
+        var testQuery = "%E7%88%B8%E7%88%B8%E5%8E%BB%E5%93%AA,+%E9%9B%BE%E9%9C%BE,+security+cameras";
+        var o = "http://www.google.com/trends/fetchComponent?hl\75zh-CN\46date\75today+1-m\46cmpt\75q\46content\0751\46cid\75TIMESERIES_GRAPH_0\46export\0755\46w\075500\46h\075330q\75%25E7%2588%25B8%25E7%2588%25B8%25E5%258E%25BB%25E5%2593%25AA%2C%2B%25E9%259B%25BE%25E9%259C%25BE%2C%2Bsecurity%2Bcameras";
+        $(document).ready(function () {
+            $(".test").click(function () {
+                googleTrends(testQuery);
+            })
 
+        });
+        function googleTrends(query) {
+            var url = baseUrl + $.param({q: query});
+            console.log("url = %s", url);
+            $("#chart").attr("src", url);
+        }
+    </script>
 </head>
 <body>
-
+<button class="test">test</button>
+<iframe id="chart" width="500" height="330" src="" style="border: none;"></iframe>
 </body>
 </html>
