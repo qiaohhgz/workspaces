@@ -1,7 +1,7 @@
 package com.jim.mvc.controller;
 
-import com.jim.mvc.exception.CustomGenericException;
-import com.jim.mvc.exception.JsonException;
+import com.jim.mvc.model.exception.CustomGenericException;
+import com.jim.mvc.model.exception.JsonException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;

@@ -1,16 +1,14 @@
 package com.jim.mvc.controller;
 
-import com.google.gson.Gson;
 import com.jim.mvc.constant.SessionKeys;
-import com.jim.mvc.exception.JsonException;
-import com.jim.mvc.exception.PageException;
+import com.jim.mvc.model.exception.JsonException;
+import com.jim.mvc.model.exception.PageException;
 import com.jim.mvc.model.VRegisterRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
